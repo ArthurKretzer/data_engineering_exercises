@@ -1,0 +1,6 @@
+pandas
+requests
+lxml
+notebook
+ipykernel
+backoff
