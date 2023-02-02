@@ -4,3 +4,4 @@ lxml
 notebook
 ipykernel
 backoff
+bs4
