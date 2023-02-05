@@ -1,0 +1,71 @@
+--CREATE TABLE BILLBOARD
+CREATE TABLE public."Billboard" (
+--     use "" when special characters or protected words are used.
+    "date" date NULL,
+    "rank" int4 NULL,
+    song varchar(300) NULL,
+    artist varchar(300) NULL,
+    "last-week" int4 NULL,
+    "peak-rank" int4 NULL,
+    "weeks-on-board" int4 NULL
+);
+-- Verify how many rows it has
+select count(*) as quantidade
+from public."Billboard"
+;
+
+-- Shows first 100 rows
+select * as quantidade
+from public."Billboard"
+limit 100
+;
+
+-- If you state all your columns it is faster than using * since * asks for the database for the list os columns before querying.
+select
+"date",
+"rank",
+song,
+artist,
+"last-week",
+"peak-rank",
+"weeks-on-board"
+from public."Billboard"
+limit 100
+;
+
+-- you can use poorsql website to format your script
+SELECT "date"
+	,"rank"
+	,song
+	,artist
+	,"last-week"
+	,"peak-rank"
+	,"weeks-on-board"
+FROM PUBLIC."Billboard" limit 100;
+
+-- gets every chuck berry music
+SELECT 
+	t1.song
+	,t1.artist
+FROM PUBLIC."Billboard" AS t1
+WHERE t1.artist = 'Chuck Berry'
+;
+
+-- counts how many times a music has appeared and groups it
+--  by artist and song ordering it descending
+SELECT t1.artist
+	,t1.song
+	,count(*) AS "#song"
+FROM PUBLIC."Billboard" AS t1
+WHERE t1.artist = 'Chuck Berry'
+group by t1.artist, t1.song
+order by "#song" desc;
+
+-- You can use lists for comparison
+SELECT t1.artist
+	,t1.song
+	,count(*) AS "#song"
+FROM PUBLIC."Billboard" AS t1
+WHERE t1.artist in ('Chuck Berry','Frankie Vaughan')
+group by t1.artist, t1.song
+order by "#song" desc;
