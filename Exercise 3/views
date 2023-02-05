@@ -1,0 +1,50 @@
+-- gets first time the artist appears in the list by its row number and creates a new table
+create table tb_web_site as (
+with cte_dedup_artist as (
+SELECT "date"
+	,"rank"
+	,artist
+    ,row_number() over(partition by artist order by artist, "date") as "dedup"
+FROM PUBLIC."Billboard"
+order by artist, "date"
+    )
+SELECT "date"
+	,"rank"
+	,artist
+from cte_dedup_artist as t1
+where t1.dedup = 1
+);
+
+select * from tb_web_site
+
+
+create table tb_artist as (
+SELECT "date"
+	,"rank"
+	,artist
+   ,song
+from public."Billboard" as t1
+where t1.artist = 'AC/DC'
+order by t1.artist, t1.song, t1."date"
+)
+drop table tb_artist;
+
+select * from tb_artist
+
+create view vw_artist as(
+with cte_dedup_artist as (
+SELECT "date"
+	,"rank"
+	,artist
+    ,row_number() over(partition by artist order by artist, "date") as "dedup"
+FROM tb_artist
+order by artist, "date"
+    )
+SELECT "date"
+	,"rank"
+	,artist
+from cte_dedup_artist as t1
+where t1.dedup = 1
+);
+
+select * from vw_artist
