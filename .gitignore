@@ -164,3 +164,6 @@ cython_debug/
 
 #pdf ignore
 *.pdf
+
+/Exercise 3/db
+/Exercise 3/pgadmin
