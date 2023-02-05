@@ -28,6 +28,11 @@ services:
       - "5050:80"
     volumes:
       - "./pgadmin:/var/lib/pgadmin/storage/"
-  
+  bi:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+    links:
+      - db
 networks:
   data_engineering:
