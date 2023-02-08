@@ -1,3 +1,6 @@
 ipykernel
 requests
 schedule
+backoff
+wheel
+ratelimit
