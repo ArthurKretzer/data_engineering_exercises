@@ -20,14 +20,16 @@ python -m ipykernel install --user --name=myenv
 
 ## Exercise 1
 
-Shows how to create requests to websites and use it with pandas and jupyter notebooks. <br>
+Shows how to create requests to websites and use it with pandas and jupyter notebooks.
+
 The example shows how to access lotery data using beautiful soup and how to create some statistics with it.
 
 ---
 
 ## Exercise 2
 
-Shows how to create basic web scrapping applications. <br>
+Shows how to create basic web scrapping applications.
+
 The example shows how to access real state data and podcast data from two different websites using beautiful soup.
 
 ---
@@ -35,3 +37,15 @@ The example shows how to access real state data and podcast data from two differ
 ## Exercise 3
 
 Shows how to create docker containers using docker-compose and how to use postgres as a relational database.
+
+It also instantiates a pg4admin for managing the database and shows a python script to interact with postgres.
+
+Finally it shows how to instantiate a metabase for business intelligence applications. 
+
+Metabase provides a friendly user interface to interact with data, create views and dashboards.
+
+## Exercise 4
+
+This exercise is for practicing object oriented programming and data ingestion.
+
+It takes trading data from an API of cryptocurrencies and stores it locally into json files.
