@@ -16,6 +16,20 @@ To install **venv** to jupyter you must run the following command on **virtualen
 python -m ipykernel install --user --name=myenv
 ```
 
+Some exercises have **docker-compose** files to create isolated and secure local environments.
+
+To run those you need to have installed **docker** and **docker-compose** in your host machine.
+
+Then you need to execute the following line inside the folder containing the .yml file.
+
+```docker-compose
+docker-compose up
+```
+
+This will instanciate one or more containers with binded volumes. Remember, these containers are only intended to be used in development. 
+
+To deploy them in production you need to take care of any credentials.
+
 ---
 
 ## Exercise 1
@@ -40,12 +54,28 @@ Shows how to create docker containers using docker-compose and how to use postgr
 
 It also instantiates a pg4admin for managing the database and shows a python script to interact with postgres.
 
-Finally it shows how to instantiate a metabase for business intelligence applications. 
+Finally it shows how to instantiate a metabase for business intelligence applications.
 
 Metabase provides a friendly user interface to interact with data, create views and dashboards.
+
+---
 
 ## Exercise 4
 
 This exercise is for practicing object oriented programming and data ingestion.
 
 It takes trading data from an API of cryptocurrencies and stores it locally into json files.
+
+---
+
+## Challenge 1
+
+This challenge uses a kaggle database available [here](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017?select=shootouts.csv) which contains international football results as match scores and player goals.
+
+The challenge was to import this .csv file into a postgres database and to develop insights from it using any data visualization technique available, like metabase for BI or pandas and seaborn using pure Python.
+
+It was also an oportunity to train some SQL query scripting.
+
+To import the .csv, pgadmin4 was used. A manual import is done after manually creating a table for each .csv.
+
+You can refer on how to import .csvs [here](https://hevodata.com/learn/pgadmin-import-csv/) and [here](https://learnsql.com/blog/how-to-import-csv-to-postgresql/)

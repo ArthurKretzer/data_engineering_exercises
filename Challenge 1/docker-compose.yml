@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  db:
+    container_name: pg_container_challenge
+    image: postgres
+    # restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
+    networks:
+      - data_engineering
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./db:/var/lib/postgresql/data/"
+  pgadmin:
+    container_name: pgadmin4_container_challenge
+    image: dpage/pgadmin4
+    # restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    networks:
+      - data_engineering
+    ports:
+      - "5050:80"
+    volumes:
+      - "./pgadmin:/var/lib/pgadmin/storage/"
+  bi:
+    container_name: metabase_container_challenge
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+    networks:
+      - data_engineering
+networks:
+  data_engineering:
