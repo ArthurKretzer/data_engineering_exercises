@@ -79,3 +79,7 @@ It was also an oportunity to train some SQL query scripting.
 To import the .csv, pgadmin4 was used. A manual import is done after manually creating a table for each .csv.
 
 You can refer on how to import .csvs [here](https://hevodata.com/learn/pgadmin-import-csv/) and [here](https://learnsql.com/blog/how-to-import-csv-to-postgresql/)
+
+To use metabase you need to create new queries. The .sql files in this exercise are good examples to create meaningful information for a dashboard.
+
+In the jupyter notebook there's an example of importing data from postgres directly into pandas to generate graphs using seaborn.
