@@ -144,28 +144,3 @@ class TradesApi(MercadoBitcoinApi):
             endpoint = f"{self.base_endpoint}/{self.coin}/{self.type}"
 
         return endpoint
-
-class TradesApi(MercadoBitcoinApi):
-    type = "trades"
-
-    def _get_unix_epoch(self, date: datetime) -> int:
-        '''
-            Gets unix timestamp from date
-        '''
-        return int(date.timestamp())
-
-    def _get_endpoint(self, date_from: datetime = None, date_to: datetime = None) -> str:
-        '''
-            Gets endpoint for trades in a range of time or last 1000 transactions if no argument is given
-        '''
-        if date_from and not date_to:
-            unix_date_from = self._get_unix_epoch(date_from)
-            endpoint = f"{self.base_endpoint}/{self.coin}/{self.type}/{unix_date_from}"
-        elif date_from and date_to:
-            unix_date_from = self._get_unix_epoch(date_from)
-            unix_date_to = self._get_unix_epoch(date_to)
-            endpoint = f"{self.base_endpoint}/{self.coin}/{self.type}/{unix_date_from}/{unix_date_to}"
-        else:
-            endpoint = f"{self.base_endpoint}/{self.coin}/{self.type}"
-
-        return endpoint
