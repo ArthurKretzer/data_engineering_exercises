@@ -103,4 +103,10 @@ To run tests you should execute the following line after installing the requirem
 python -m pytest
 ```
 
-All testes are expected to pass in current version.
+All tests are expected to pass in current version.
+
+If you want to see the coverage of the testing codes, you can type:
+
+```python
+python -m pytest --cov=mercado_bitcoin tests/
+```
