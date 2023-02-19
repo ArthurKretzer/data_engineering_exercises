@@ -82,9 +82,12 @@ You can refer on how to import .csvs [here](https://hevodata.com/learn/pgadmin-i
 
 To use metabase you need to create new queries. The .sql files in this exercise are good examples to create meaningful information for a dashboard.
 
+You can achieve a similar result from the image.
+![Image](Challenge 1\metabase-dashboard.png)
+
 In the jupyter notebook there's an example of importing data from postgres directly into pandas to generate graphs using seaborn.
+
 
 ---
 
 ### Exercise 5
-
