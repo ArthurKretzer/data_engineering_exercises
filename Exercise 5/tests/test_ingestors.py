@@ -6,6 +6,7 @@ from ingestors import DataIngestor
 from writer import DataWriter
 
 @pytest.fixture
+# Overwrites abstract methods.
 @patch("ingestors.DataIngestor.__abstractmethods__", set())
 def data_ingestor_fixture():
 	return DataIngestor(
@@ -14,8 +15,6 @@ def data_ingestor_fixture():
 			default_start_date=datetime.date(2021, 6, 21)
 		)
 
-# Overwrites abstract methods.
-@patch("ingestors.DataIngestor.__abstractmethods__", set())
 class TestIngestors:
 	def test_checkpoint_filename(self, data_ingestor_fixture):
 		actual = data_ingestor_fixture._checkpoint_filename
