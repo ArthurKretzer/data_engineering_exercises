@@ -26,7 +26,7 @@ Then you need to execute the following line inside the folder containing the .ym
 docker-compose up
 ```
 
-This will instanciate one or more containers with binded volumes. Remember, these containers are only intended to be used in development. 
+This will instanciate one or more containers with binded volumes. Remember, these containers are only intended to be used in development.
 
 To deploy them in production you need to take care of any credentials.
 
@@ -86,7 +86,6 @@ You can achieve a similar result from the image.
 ![Image](Challenge 1\metabase-dashboard.png)
 
 In the jupyter notebook there's an example of importing data from postgres directly into pandas to generate graphs using seaborn.
-
 
 ---
 
