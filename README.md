@@ -91,3 +91,17 @@ In the jupyter notebook there's an example of importing data from postgres direc
 ---
 
 ### Exercise 5
+
+This exercise focus on unitary tests.
+
+Mocks and patches are used.
+
+Tests requires particular modules. Those can be installed with the requirements.txt inside the tests folder.
+
+To run tests you should execute the following line after installing the requirements.
+
+```python
+python -m pytest
+```
+
+All testes are expected to pass in current version.
