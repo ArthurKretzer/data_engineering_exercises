@@ -110,3 +110,5 @@ If you want to see the coverage of the testing codes, you can type:
 ```python
 python -m pytest --cov=mercado_bitcoin tests/
 ```
+
+The ideal production coverage is above 80%.
