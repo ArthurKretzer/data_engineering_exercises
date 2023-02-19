@@ -2,12 +2,12 @@ import datetime
 import pytest
 
 from unittest.mock import patch, mock_open
-from ingestors import DataIngestor
-from writer import DataWriter
+from mercado_bitcoin.ingestors import DataIngestor
+from mercado_bitcoin.writer import DataWriter
 
 @pytest.fixture
 # Overwrites abstract methods.
-@patch("ingestors.DataIngestor.__abstractmethods__", set())
+@patch("mercado_bitcoin.ingestors.DataIngestor.__abstractmethods__", set())
 def data_ingestor_fixture():
 	return DataIngestor(
 			writer=DataWriter,
@@ -41,7 +41,7 @@ class TestIngestors:
 		assert actual == expected
 
 	# Mocks the write checkpoint function to return None. Otherwise it will create a new file.
-	@patch("ingestors.DataIngestor._write_checkpoint", return_value=None)
+	@patch("mercado_bitcoin.ingestors.DataIngestor._write_checkpoint", return_value=None)
 	def test_update_checkpoint_checkpoint_updated(self, mock, data_ingestor_fixture):
 		data_ingestor = data_ingestor_fixture
 		data_ingestor._update_checkpoint(datetime.date(2019, 1, 1)) 
@@ -50,7 +50,7 @@ class TestIngestors:
 
 		assert actual == expected
 
-	@patch("ingestors.DataIngestor._write_checkpoint", return_value=None)
+	@patch("mercado_bitcoin.ingestors.DataIngestor._write_checkpoint", return_value=None)
 	def test_update_checkpoint_checkpoint_written(self, mock, data_ingestor_fixture):
 		data_ingestor = data_ingestor_fixture
 		data_ingestor._update_checkpoint(datetime.date(2019, 1, 1)) 
@@ -59,7 +59,7 @@ class TestIngestors:
 
 	@patch("builtins.open", new_callable=mock_open, read_data="2021-06-25")
 	# Creates a mock to emulate filename.
-	@patch("ingestors.DataIngestor._checkpoint_filename", return_value="foobar.checkpoint")
+	@patch("mercado_bitcoin.ingestors.DataIngestor._checkpoint_filename", return_value="foobar.checkpoint")
 	# When more than one mock is created, then you need to input more mocks into the function.
 	# The order is first in -> last input
 	def test_write_checkpoint(self, mock_checkpoint_filename, mock_open_file, data_ingestor_fixture):
