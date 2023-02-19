@@ -112,3 +112,9 @@ python -m pytest --cov=mercado_bitcoin tests/
 ```
 
 The ideal production coverage is above 80%.
+
+---
+
+### Exercise 6
+
+This exercise is itented to learn and practice jenkins applications.
