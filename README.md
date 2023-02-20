@@ -134,3 +134,13 @@ python main.py <cep>
 ```
 
 The next script searches for nicholas cage portuguese wikipedia page and gets a table containing the list of all his movies. Then it stores this information into a .csv file.
+
+---
+
+### Exercise 8
+
+This exercise focus on creating an access to AWS s3.
+You need to create an account on aws and an API key for your account.
+This API id key and password should be provided on a .env file on Exercise 8 folder for aws.py to run correctly.
+There's a .env example file on the repo as reference. You should edit it and rename as .env inside Exercise 8 folder.
+This script simply creates a test bucket. To avoid unecessary billings, you should delete the test bucket rightly after script execution on AWS console.
