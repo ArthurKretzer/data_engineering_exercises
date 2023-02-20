@@ -118,3 +118,19 @@ The ideal production coverage is above 80%.
 ### Exercise 6
 
 This exercise is just focused on creating a jenkins instance to schedule a currency quoting.
+
+---
+
+### Exercise 7
+
+This exercise aims to practice web crawlers using selenium.
+
+The first script main.py gets address info from correios do brasil website using CEP code.
+
+To use it you need to insert cep as an argument and run it like:
+
+```python
+python main.py <cep>
+```
+
+The next script searches for nicholas cage portuguese wikipedia page and gets a table containing the list of all his movies. Then it stores this information into a .csv file.
