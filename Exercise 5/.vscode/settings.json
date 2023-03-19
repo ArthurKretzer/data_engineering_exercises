@@ -3,5 +3,7 @@
 		"tests"
 	],
 	"python.testing.unittestEnabled": false,
-	"python.testing.pytestEnabled": true
+	"python.testing.pytestEnabled": true,
+	"dotenv.enableAutocloaking": true,
+	"terminal.integrated.cwd": "${workspaceFolder}"
 }
