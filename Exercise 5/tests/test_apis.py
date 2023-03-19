@@ -1,9 +1,8 @@
 import datetime
 import pytest
 import requests
-from unittest.mock import patch, mock_open
+from unittest.mock import patch
 from mercado_bitcoin.apis import DaySummaryApi, TradesApi, MercadoBitcoinApi
-
 
 class TestDaySummaryApi:
 	@pytest.mark.parametrize(
