@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
 from datetime import date, datetime, timedelta
-from mercado_bitcoin.writer import DataWriter
-from mercado_bitcoin.apis import DaySummaryApi
+from writer import DataWriter
+from apis import DaySummaryApi
 
 class DataIngestor(ABC):
 
