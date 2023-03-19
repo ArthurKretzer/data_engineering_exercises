@@ -8,10 +8,8 @@ if __name__ == "__main__":
 	day_summary_ingestor = DaySummaryIngestor(
 		writer=DataWriter, 
 		coins=['BTC', 'ETH', 'LTC'], 
-		default_start_date=date(2021, 6, 1)
+		default_start_date=date(2023, 3, 10)
 		)
-
-	trades_ingestor = TradesIngestor()
 
 	@repeat(every(1).seconds)
 	def job():
