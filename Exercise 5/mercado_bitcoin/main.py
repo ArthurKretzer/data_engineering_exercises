@@ -1,17 +1,18 @@
 import time
 from datetime import date
 from schedule import repeat, every, run_pending
-from mercado_bitcoin.ingestors import DaySummaryIngestor
-from mercado_bitcoin.writer import DataWriter
+from ingestors import AwsDaySummaryIngestor
+from writer import S3Writter
+
+import dotenv
+dotenv.load_dotenv()
 
 if __name__ == "__main__":
-	day_summary_ingestor = DaySummaryIngestor(
-		writer=DataWriter, 
+	day_summary_ingestor = AwsDaySummaryIngestor(
+		writer=S3Writter, 
 		coins=['BTC', 'ETH', 'LTC'], 
-		default_start_date=date(2021, 6, 1)
+		default_start_date=date(2023, 1, 1)
 		)
-
-	trades_ingestor = TradesIngestor()
 
 	@repeat(every(1).seconds)
 	def job():
