@@ -113,6 +113,18 @@ python -m pytest --cov=mercado_bitcoin tests/
 
 The ideal production coverage is above 80%.
 
+Extra:
+
+Now this code is implemented to run on AWS. The overview of the cloud formation is presented on the image below.
+
+![image](https://user-images.githubusercontent.com/14501830/226216295-6e6be35d-b873-4e48-9438-a0af99709287.png)
+
+Please note that to run on AWS you need to configure a .env containing your credentials configured in IAM. An example .env is provided.
+The profile needs to have full access to lambda, dynamodb and s3.
+Note that lambda only supports up to python 3.9. This project uses python 3.11 so it will not work directly on lambda at the moment.
+To use it on zappa serverless to automatically create a lambda service you need to give lambda_function.py as the entrypoint for lambda execution, but again you need up to python 3.9.
+But at the moment you can only run this code locally to ingest data and send it to test S3 and DynamoDB writing.
+
 ---
 
 ### Exercise 6
