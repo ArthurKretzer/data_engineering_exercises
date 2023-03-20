@@ -53,7 +53,7 @@ class TradesApi(MercadoBitcoinApi):
 		'''
 			Gets unix timestamp from date
 		'''
-		return int(date.timestamp())
+		return int((date - datetime(1970, 1, 1)).total_seconds())
 
 	def _get_endpoint(self, date_from: datetime = None, date_to: datetime = None) -> str:
 		'''
