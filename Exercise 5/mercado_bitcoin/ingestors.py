@@ -7,7 +7,7 @@ from checkpoints import DynamoCheckpoints, CheckpointModel
 
 class DataIngestor(ABC):
 
-	def __init__(self, writer: DataWriter, coins: list[str], default_start_date: date) -> None:
+	def __init__(self, writer: DataWriter, coins: "list[str]", default_start_date: date) -> None:
 		self.coins = coins
 		self.default_start_date = default_start_date
 		self.writer = writer
@@ -56,7 +56,7 @@ class DaySummaryIngestor(DataIngestor):
 
 class AwsDataIngestor(ABC):
 
-	def __init__(self, writer: DataWriter, coins: list[str], default_start_date: date) -> None:
+	def __init__(self, writer: DataWriter, coins: "list[str]", default_start_date: date) -> None:
 		self.dynamodb_checkpoint = DynamoCheckpoints(model=CheckpointModel, report_id=self.__class__.__name__, default_start_date=default_start_date)
 		self.coins = coins
 		self.default_start_date = default_start_date
