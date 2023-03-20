@@ -22,11 +22,31 @@ class TestTradesApi:
 	@pytest.mark.parametrize(
 		"coin, date_from, date_to, expected",
 		[
-			("TEST", datetime.datetime(2019,1,1), datetime.datetime(2019,2,2), "https://www.mercadobitcoin.net/api/TEST/trades/1546311600/1549076400"),
-			("TEST", datetime.datetime(2019, 6, 12), datetime.datetime(2019, 6, 15), "https://www.mercadobitcoin.net/api/TEST/trades/1560308400/1560567600"),
-			("TEST", None, None, "https://www.mercadobitcoin.net/api/TEST/trades"),
-			("TEST", None, datetime.datetime(2019, 6, 15), "https://www.mercadobitcoin.net/api/TEST/trades"),
-			("TEST", datetime.datetime(2019, 6, 12), None, "https://www.mercadobitcoin.net/api/TEST/trades/1560308400")
+			(
+                "TEST",
+                datetime.datetime(2019, 1, 1),
+                datetime.datetime(2019, 1, 2),
+                "https://www.mercadobitcoin.net/api/TEST/trades/1546300800/1546387200",
+            ),
+            (
+                "TEST",
+                datetime.datetime(2021, 6, 12),
+                datetime.datetime(2021, 6, 15),
+                "https://www.mercadobitcoin.net/api/TEST/trades/1623456000/1623715200",
+            ),
+            ("TEST", None, None, "https://www.mercadobitcoin.net/api/TEST/trades"),
+            (
+                "TEST",
+                None,
+                datetime.datetime(2021, 6, 15),
+                "https://www.mercadobitcoin.net/api/TEST/trades",
+            ),
+            (
+                "TEST",
+                datetime.datetime(2021, 6, 12),
+                None,
+                "https://www.mercadobitcoin.net/api/TEST/trades/1623456000",
+            ),
 		]
 	)
 	def test_get_endpoint(self, coin:str, date_from:datetime.date, date_to:datetime.date, expected:str):
@@ -41,11 +61,11 @@ class TestTradesApi:
 	@pytest.mark.parametrize(
 		"date, expected",
 		[
-			(datetime.datetime(2019, 1, 1), 1546311600),
-			(datetime.datetime(2019, 2, 2), 1549076400),
-			(datetime.datetime(2019, 6, 12), 1560308400),
-			(datetime.datetime(2019, 6, 12, 0, 0, 5), 1560308405),
-			(datetime.datetime(2019, 6, 15), 1560567600)
+			(datetime.datetime(2019, 1, 1), 1546300800),
+			(datetime.datetime(2019, 1, 2), 1546387200),
+			(datetime.datetime(2021, 6, 12), 1623456000),
+			(datetime.datetime(2021, 6, 12, 0, 0, 5), 1623456005),
+			(datetime.datetime(2021, 6, 15), 1623715200)
 		]
 	)
 	def test_get_unix_epoch(self, date:datetime.date, expected:int):
