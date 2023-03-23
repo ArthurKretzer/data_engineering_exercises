@@ -20,5 +20,5 @@ jobs:
         working-directory: "Exercise 5"
       
       - name: Run tests
-        run: poetry make ci-tests
+        run: poetry make ci-test
         working-directory: "Exercise 5"
