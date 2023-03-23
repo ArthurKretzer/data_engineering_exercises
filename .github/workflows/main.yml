@@ -17,6 +17,8 @@ jobs:
           python-version: '3.9'
       - name: Install deps
         run: make ci-setup
+        working-directory: "Exercise 5"
       
       - name: Run tests
         run: poetry make ci-tests
+        working-directory: "Exercise 5"
