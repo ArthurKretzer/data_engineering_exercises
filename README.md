@@ -161,6 +161,15 @@ There's a .env example file on the repo as reference. You should edit it and ren
 
 This script simply creates a test bucket. To avoid unecessary billings, you should delete the test bucket rightly after script execution on AWS console.
 
+---
+
 ### Challenge 2
 
 This exercise populates an AWS RDS Postgres with fake customer data to be replicated by a DMS to a bucket. The whole process of creating AWS instances is not documented here and it's an extensive and error prone process.
+
+---
+
+### Exercise 9
+
+This exercise populates a topic (SNS) to feed a queue (SQS) that is consumed by a Kinesis Firehose to store fake messages on a data-lake-raw.
+
