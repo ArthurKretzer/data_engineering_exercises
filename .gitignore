@@ -171,3 +171,7 @@ cython_debug/
 /Challenge 1/db
 /Challenge 1/pgadmin
 /Exercise 6/jenkins_home
+/Exercise 10/logs/
+/Exercise 10/plugins/
+
+.vscode
